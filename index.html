@@ -1,0 +1,44 @@
+<head>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.fullscreen {
+			display: block;
+			width: 100%;
+			height: 100vh;
+			object-fit: cover;
+			object-position: top;
+		}
+	</style>
+	<script>
+		var wallpapers = [
+			"alley-by-laineniklas.jpg",
+			"cyberpunk_streets_by_seerlight.jpg",
+			"d98qb8z-56df9d2f-1a24-41d4-ad7d-e4244cc189be.gif",
+			"da4lboo-fbc24a9d-c308-4e4a-8f29-f79dc1974067.gif",
+			"datjp1z-fc3069a4-9ffc-40d0-861b-a53e6a267634.gif",
+			"de1ajge-184c531f-dcec-4eec-8fff-a415b246a589.gif",
+			"denus5p-8441bdcb-c4f5-49d6-ad16-c0f648355855.gif",
+			"hive_of_wonder_by_anthonypresley.jpg",
+			"peak_civil_by_dana_ulama.jpg",
+			"rolling_clouds.gif",
+			"sushi-stand.gif",
+		]
+
+		var change_wallpaper = function () {
+			var wallpaper = document.getElementById("wallpaper")
+			wallpaper.src = "assets".concat("/", wallpapers[Math.floor(Math.random() * wallpapers.length)]);
+		}
+
+		var setupId = setInterval(function () {change_wallpaper(); clearInterval(setupId);}, 100);
+
+		setInterval(change_wallpaper, 5 * 60 * 1000); // Change every 5 mins
+	</script>
+</head>
+
+<body>
+	<img class="fullscreen" id="wallpaper" src="assets/rolling_clouds.gif" alt="">
+</body>
